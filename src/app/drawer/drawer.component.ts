@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideChartNoAxesColumn } from '@ng-icons/lucide';
+import {
+  lucideChartNoAxesColumn,
+  lucideMenu,
+  lucideSprout,
+} from '@ng-icons/lucide';
 
 @Component({
   selector: 'app-drawer',
-  imports: [NgIcon],
-  viewProviders: [provideIcons({ lucideChartNoAxesColumn })],
+  imports: [NgIcon, RouterLink],
+  viewProviders: [
+    provideIcons({ lucideChartNoAxesColumn, lucideMenu, lucideSprout }),
+  ],
 
   templateUrl: './drawer.component.html',
 })
