@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
+import { TableCropsComponent } from '../table-crops/table-crops.component';
 
 @Component({
   selector: 'app-crops-main',
-  imports: [],
-  templateUrl: './crops-main.component.html'
+  imports: [TableCropsComponent],
+  templateUrl: './crops-main.component.html',
 })
-export class CropsMainComponent {
-
-}
+export class CropsMainComponent {}

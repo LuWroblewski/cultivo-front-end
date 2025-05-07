@@ -1,0 +1,41 @@
+<div class="flex flex-col justify-center items-center">
+  <p>table-crops works!</p>
+
+  <div class="flex-grow">
+    <table class="table table-zebra">
+      <!-- Cabeçalho da Tabela -->
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome da Planta</th>
+          <th>Coluna de Cama</th>
+          <th>Número</th>
+          <th>ID de Origem</th>
+          <th>Ciclo de Produção (gramas)</th>
+          <th>Notas</th>
+          <th>Criado em</th>
+          <th>Atualizado em</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Exibindo as culturas -->
+        <tr *ngFor="let crop of crops()">
+          <td>{{ crop.id }}</td>
+          <td>{{ crop.plant_name }}</td>
+          <td>{{ crop.bed_column }}</td>
+          <td>{{ crop.number }}</td>
+          <td>{{ crop.origin_id }}</td>
+          <td>{{ crop.production_cycle_grams || "N/A" }}</td>
+          <td>{{ crop.notes || "Sem notas" }}</td>
+          <td>{{ crop.created_at | date : "short" }}</td>
+          <td>{{ crop.updated_at | date : "short" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Caso não haja dados -->
+  <div *ngIf="crops().length === 0">
+    <p>Sem dados disponíveis.</p>
+  </div>
+</div>
