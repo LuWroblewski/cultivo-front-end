@@ -1,0 +1,162 @@
+<button class="btn flex btn-success" onclick="modal_add_crops.showModal()">
+  <ng-icon name="lucideSprout" class="text-xl" /> Adicionar Cultivo
+</button>
+
+<dialog id="modal_add_crops" class="modal bg-none">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    novalidate
+    method="dialog"
+    class="modal-box p-0 bg-none bg-transparent"
+  >
+    <fieldset
+      class="fieldset bg-base-300 border-base-300 rounded-box w-full border p-6 bg-none"
+    >
+      <legend class="fieldset-legend text-lg font-bold mb-4">
+        Adicionar Cultivo
+      </legend>
+
+      <div class="flex justify-between space-x-2">
+        <div>
+          <label class="label">Nome da Planta</label>
+          <input
+            type="text"
+            class="input"
+            formControlName="plant_name"
+            placeholder="Plant name"
+          />
+          <small
+            *ngIf="
+              form.get('plant_name')?.touched &&
+              form.get('plant_name')?.hasError('required')
+            "
+            >Obrigatório.</small
+          >
+          <small
+            *ngIf="
+              form.get('plant_name')?.touched &&
+              form.get('plant_name')?.hasError('maxlength')
+            "
+            >Máx 100 caracteres.</small
+          >
+        </div>
+        <div>
+          <label class="label">Origin ID *</label>
+          <input
+            type="number"
+            class="input"
+            formControlName="origin_id"
+            placeholder="Origin ID"
+          />
+          <small
+            *ngIf="
+              form.get('origin_id')?.touched &&
+              form.get('origin_id')?.hasError('required')
+            "
+            >Obrigatório.</small
+          >
+        </div>
+      </div>
+
+      <div class="flex justify-between space-x-2">
+        <div>
+          <label class="label">Coluna</label>
+          <input
+            type="text"
+            class="input"
+            formControlName="bed_column"
+            placeholder="Bed column"
+          />
+          <small
+            *ngIf="
+              form.get('bed_column')?.touched &&
+              form.get('bed_column')?.hasError('required')
+            "
+            >Obrigatório.</small
+          >
+          <small
+            *ngIf="
+              form.get('bed_column')?.touched &&
+              form.get('bed_column')?.hasError('maxlength')
+            "
+            >Máx 10 caracteres.</small
+          >
+        </div>
+
+        <div>
+          <label class="label">Numero-coluna</label>
+          <input
+            type="number"
+            class="input"
+            formControlName="number"
+            placeholder="Number"
+          />
+          <small
+            *ngIf="
+              form.get('number')?.touched &&
+              form.get('number')?.hasError('required')
+            "
+            >Obrigatório.</small
+          >
+          <small
+            *ngIf="
+              form.get('number')?.touched && form.get('number')?.hasError('max')
+            "
+            >Máximo 10.</small
+          >
+        </div>
+      </div>
+      <label class="label">Source Crop ID (UUID)</label>
+      <input
+        type="text"
+        class="input"
+        formControlName="source_crop_id"
+        placeholder="Source Crop ID"
+      />
+
+      <label class="label">Production Cycle Grams</label>
+      <input
+        type="number"
+        class="input"
+        formControlName="production_cycle_grams"
+        placeholder="Production Grams"
+      />
+      <small
+        *ngIf="
+          form.get('production_cycle_grams')?.touched &&
+          form.get('production_cycle_grams')?.hasError('min')
+        "
+        >Mínimo 0.</small
+      >
+
+      <label class="label">Notes</label>
+      <textarea
+        class="textarea"
+        formControlName="notes"
+        placeholder="Notes"
+      ></textarea>
+
+      <div class="mt-6 flex gap-2">
+        <button
+          type="submit"
+          class="btn btn-primary flex-1"
+          [disabled]="form.invalid"
+        >
+          Salvar
+        </button>
+        <button
+          type="button"
+          class="btn flex-1"
+          onclick="modal_add_crops.close()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </fieldset>
+  </form>
+
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
