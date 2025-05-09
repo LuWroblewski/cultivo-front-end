@@ -29,7 +29,7 @@ export class ModalAddCropComponent {
       plant_name: ['', [Validators.required, Validators.maxLength(100)]],
       bed_column: ['', [Validators.required, Validators.maxLength(10)]],
       number: [null, [Validators.required, Validators.max(10)]],
-      origin_id: [null, [Validators.required]],
+      origin_id: ['', [Validators.required]],
       source_crop_id: ['', []],
       production_cycle_grams: [null, [Validators.min(0)]],
       notes: ['', []],

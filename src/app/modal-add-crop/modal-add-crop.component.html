@@ -24,7 +24,7 @@
             type="text"
             class="input"
             formControlName="plant_name"
-            placeholder="Plant name"
+            placeholder="Nome da Planta"
           />
           <small
             *ngIf="
@@ -42,13 +42,15 @@
           >
         </div>
         <div>
-          <label class="label">Origin ID *</label>
-          <input
-            type="number"
-            class="input"
-            formControlName="origin_id"
-            placeholder="Origin ID"
-          />
+          <label class="label">Origem</label>
+          <select class="select" formControlName="origin_id">
+            <option value="" hidden selected disabled>
+              Selecione uma Origem
+            </option>
+            <option value="1">Semente</option>
+            <option value="2">Muda</option>
+            <option value="3">Estaquia</option>
+          </select>
           <small
             *ngIf="
               form.get('origin_id')?.touched &&
@@ -66,7 +68,7 @@
             type="text"
             class="input"
             formControlName="bed_column"
-            placeholder="Bed column"
+            placeholder="Coluna"
           />
           <small
             *ngIf="
@@ -90,7 +92,7 @@
             type="number"
             class="input"
             formControlName="number"
-            placeholder="Number"
+            placeholder="Numero-coluna"
           />
           <small
             *ngIf="
@@ -107,20 +109,20 @@
           >
         </div>
       </div>
-      <label class="label">Source Crop ID (UUID)</label>
+      <label class="label">Planta de Origem</label>
       <input
         type="text"
         class="input"
         formControlName="source_crop_id"
-        placeholder="Source Crop ID"
+        placeholder="Planta de Origem"
       />
 
-      <label class="label">Production Cycle Grams</label>
+      <label class="label">Produção Ciclo Grama</label>
       <input
         type="number"
         class="input"
         formControlName="production_cycle_grams"
-        placeholder="Production Grams"
+        placeholder="Produção Ciclo Grama"
       />
       <small
         *ngIf="
@@ -130,11 +132,11 @@
         >Mínimo 0.</small
       >
 
-      <label class="label">Notes</label>
+      <label class="label">Notas</label>
       <textarea
         class="textarea"
         formControlName="notes"
-        placeholder="Notes"
+        placeholder="Notas"
       ></textarea>
 
       <div class="mt-6 flex gap-2">
