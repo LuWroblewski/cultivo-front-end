@@ -4,10 +4,11 @@ import { ApiResponse, Crop } from '../../types/types';
 import { environment } from '../../environments/environment.development';
 import { CommonModule } from '@angular/common';
 import { MenuTableCropsComponent } from '../menu-table-crops/menu-table-crops.component';
+import { MenuEventsComponent } from '../menu-events/menu-events.component';
 
 @Component({
   selector: 'app-table-crops',
-  imports: [CommonModule, MenuTableCropsComponent],
+  imports: [CommonModule, MenuTableCropsComponent, MenuEventsComponent],
   templateUrl: './table-crops.component.html',
 })
 export class TableCropsComponent {
