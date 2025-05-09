@@ -3,10 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { ApiResponse, Crop } from '../../types/types';
 import { environment } from '../../environments/environment.development';
 import { CommonModule } from '@angular/common';
+import { MenuTableCropsComponent } from '../menu-table-crops/menu-table-crops.component';
 
 @Component({
   selector: 'app-table-crops',
-  imports: [CommonModule],
+  imports: [CommonModule, MenuTableCropsComponent],
   templateUrl: './table-crops.component.html',
 })
 export class TableCropsComponent {

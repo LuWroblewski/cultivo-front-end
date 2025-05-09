@@ -1,8 +1,9 @@
-<div class="flex flex-col justify-center items-center">
+<div class="flex flex-col justify-center p-8 space-y-4">
   <p>table-crops works!</p>
+  <app-menu-table-crops (cropAdded)="loadCrops()"></app-menu-table-crops>
 
   <div class="flex-grow">
-    <table class="table table-zebra">
+    <table class="table table-zebra bg-base-300">
       <!-- Cabeçalho da Tabela -->
       <thead>
         <tr>

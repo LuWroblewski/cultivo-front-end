@@ -1,0 +1,14 @@
+<div
+  class="flex justify-between items-center w-full bg-base-300 rounded-box px-10 py-4"
+>
+  <div class="flex gap-4">
+    <div>
+      <label class="input input-success">
+        <ng-icon name="lucideSearch" class="text-xl" />
+        <input type="search" class="grow" placeholder="Procurar Cultivo" />
+      </label>
+    </div>
+  </div>
+
+  <app-modal-add-crop (cropAdded)="CropAdded()"> </app-modal-add-crop>
+</div>
